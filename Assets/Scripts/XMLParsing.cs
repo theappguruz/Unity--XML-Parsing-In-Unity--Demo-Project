@@ -93,6 +93,7 @@ public class XMLParsing : MonoBehaviour
 			int nodeId = int.Parse(node.GetAttribute("id"));
 			Player tempPlayer = Players[nodeId-1];
 			tempPlayer.score *= 10;
+			Players[nodeId-1] = tempPlayer;
 			node.SelectSingleNode("score").InnerText = tempPlayer.score + "";
 			displayPlayeData(tempPlayer);
 		}
